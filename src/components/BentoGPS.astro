@@ -1,0 +1,47 @@
+---
+interface Props{
+    class:string
+    title:string
+    subtitle?:string
+}
+
+const {title,subtitle} = Astro.props
+---
+<style>
+    article {
+      box-shadow: inset 0px 0px 55px 46px rgba(0,0,0,0.8);
+    }
+
+  </style>
+  
+  <article 
+      class={`
+      ${Astro.props.class}
+      col-span-5
+      relative rounded-2xl 
+      background-drop-blur-md
+      border border-black/10 
+      overflow-hidden
+      group
+  `}
+  >   
+      <slot name="image"></slot>
+  
+      <div class="relative select-none flex flex-col gap-1 px-9 text-lg z-20 justify-end h-full">
+          <h2 class="text-3xl font-bold text-balance text-white mb-8">{title}</h2>
+          {subtitle && <h3 class="text-3xl font-bold text-sky/200/800 -mt-4 mb-4">{subtitle}</h3>}
+          <slot name="content"></slot>
+      </div>
+  
+      <!-- Nuevo contenedor para el contenido arriba a la derecha -->
+      <div class="absolute top-0 right-0 p-8 text-white text-right">
+        <p class="max-w-xl mb-1">
+            <span class="block text-2xl font-bold">{25.2}</span>
+            <span class="block text-sm font-medium">KM</span>
+        </p>
+        <p class="max-w-xl">
+            <span class="block text-2xl font-bold">{27}</span>
+            <span class="block text-sm font-medium">KM/H</span>
+        </p>
+    </div>
+  </article>

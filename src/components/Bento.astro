@@ -1,5 +1,9 @@
 ---
 import BentoItem from "./BentoItem.astro";
+import BentoBike from "./BentoBike.astro";
+import BentoGPS from "./BentoGPS.astro";
+import BentoChallenge from "./BentoChallenge.astro";
+import BentoBluetooth from "./BentoBluetooth.astro";
 import { getI18N } from '../i18n/'
 
 const { currentLocale } = Astro
@@ -11,58 +15,57 @@ const i18n = getI18N({ currentLocale })
     grid lg:grid-cols-10 auto-rows-[30rem] gap-4
     mx-auto p-6 md:p-12 lg:p-20"
     >
-    <BentoItem class="col-span-10 lg:col-span-4" title={i18n.BENTO_TITLE_1}>    
+    <BentoBike class="col-span-10 lg:col-span-7" title="Limited edition, exclusive design">    
         <div
             slot='image'
             class='transition-scale absolute bottom-0 left-0 top-0
-                -z-10 h-full w-full bg-blue-950
+                -z-10 h-full w-full bg-[#040404]
                 bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out group-hover:scale-110'
-            style="background-image: url('/mountain.webp')"
+            style="background-image: url('/bike.webp');"
         >
         </div>
 
-        <p set:html={i18n.BENTO_CONTENT_1} slot="content" class="max-w-xl text-base md:text-lg"></p>
-    </BentoItem>
-
-    <BentoItem class="col-span-10 lg:col-span-6" title={i18n.BENTO_TITLE_2} subtitle={i18n.BENTO_SUBTITLE_2}> 
-        <div
-            slot='image'
-            class='transition-scale absolute bottom-0 left-0 top-0
-                -z-10 h-full w-full bg-blue-900
-                bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out group-hover:scale-110'
-            style="background-image: url('/grefg.webp')"
-        >
-        </div>
-
-        <p set:html={i18n.BENTO_CONTENT_2} slot="content" class="max-w-xl text-base md:text-lg"></p>  
-    </BentoItem>
-
-    <BentoItem class="col-span-10 lg:col-span-6" title={i18n.BENTO_TITLE_3} subtitle={i18n.BENTO_SUBTITLE_3} >
-        <div
-            slot='image'
-            class='transition-scale absolute bottom-0 left-0 top-0
-                -z-10 h-full w-full bg-blue-900
-                bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out group-hover:scale-110'
-            style="background-image: url('/pistas.webp')"
-        >
-        </div>
-
-        <p set:html={i18n.BENTO_CONTENT_3} slot="content" class="max-w-xl text-base md:text-lg">
-            
+        <p  slot="content" class="max-w-xl text-base md:text-lg">
+            Now you have all you need for your city rides with Siroko.
         </p>
-    </BentoItem>
+    </BentoBike>
 
-    <BentoItem class="col-span-10 lg:col-span-4" title={i18n.BENTO_TITLE_4}>
+    <BentoGPS class="col-span-10 lg:col-span-3" title="GPS tracker" > 
         <div
             slot='image'
             class='transition-scale absolute bottom-0 left-0 top-0
-                -z-10 h-full w-full bg-blue-900
+                -z-10 h-full w-full 
                 bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out group-hover:scale-110'
-            style="background-image: url('/laptop.webp')"
+            style="background-image: url('/maps.jpg');"
         >
         </div>
 
-        <p set:html={i18n.BENTO_CONTENT_4} slot="content" class="max-w-xl text-base md:text-lg"></p>
-    </BentoItem>
+         
+    </BentoGPS>
+
+    <BentoChallenge class="col-span-10 lg:col-span-3" title="Challenge your friends" >
+        <div
+            slot='image'
+            class='transition-scale absolute bottom-0 left-0 top-0
+                -z-10 h-full w-full 
+                bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out group-hover:scale-110'
+            style="background-image: url('/Challenge.png');"
+        >
+        </div>
+
+        
+    </BentoChallenge>
+
+    <BentoBluetooth class="col-span-10 lg:col-span-7" title="Bluetooth controls at your fingerprints">
+        <div
+            slot='image'
+            class='transition-scale absolute bottom-0 left-0 top-0
+                -z-10 h-full w-full 
+                bg-contain bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out group-hover:scale-110'
+            style="background-image: url('/Bluetooth.png'); "
+        >
+        </div>
+
+    </BentoBluetooth>
     
 </section>
