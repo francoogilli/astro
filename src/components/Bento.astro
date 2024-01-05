@@ -15,7 +15,7 @@ const i18n = getI18N({ currentLocale })
     grid lg:grid-cols-10 auto-rows-[30rem] gap-4
     mx-auto p-6 md:p-12 lg:p-20"
     >
-    <BentoBike class="col-span-10 lg:col-span-7" title="Limited edition, exclusive design">    
+    <BentoBike class="col-span-10 lg:col-span-7" title={i18n.BIKE_TITLE}>    
         <div
             slot='image'
             class='transition-scale absolute bottom-0 left-0 top-0
@@ -25,12 +25,12 @@ const i18n = getI18N({ currentLocale })
         >
         </div>
 
-        <p  slot="content" class="max-w-xl text-base md:text-lg">
-            Now you have all you need for your city rides with Siroko.
+        <p set:html={i18n.BIKE_DESCRIPTION} slot="content" class="max-w-xl text-base md:text-lg">
+            
         </p>
     </BentoBike>
 
-    <BentoGPS class="col-span-10 lg:col-span-3" title="GPS tracker" > 
+    <BentoGPS class="col-span-10 lg:col-span-3" title={i18n.GPS_TITLE} > 
         <div
             slot='image'
             class='transition-scale absolute bottom-0 left-0 top-0
@@ -43,7 +43,7 @@ const i18n = getI18N({ currentLocale })
          
     </BentoGPS>
 
-    <BentoChallenge class="col-span-10 lg:col-span-3" title="Challenge your friends" >
+    <BentoChallenge class="col-span-10 lg:col-span-3" title={i18n.CHALLENGE_TITLE} >
         <div
             slot='image'
             class='transition-scale absolute bottom-0 left-0 top-0
@@ -56,7 +56,7 @@ const i18n = getI18N({ currentLocale })
         
     </BentoChallenge>
 
-    <BentoBluetooth class="col-span-10 lg:col-span-7" title="Bluetooth controls at your fingerprints">
+    <BentoBluetooth class="col-span-10 lg:col-span-7" title={i18n.BLUETOOTH_TITLE}>
         <div
             slot='image'
             class='transition-scale absolute bottom-0 left-0 top-0
